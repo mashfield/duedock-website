@@ -89,19 +89,27 @@
             <p class="section-subtitle">Designed to be simple, powerful, and beautiful</p>
             <div class="screenshots-track">
                 <div class="screenshot-frame">
-                    <img src="images/screenshot-dashboard.png" alt="DueDock Dashboard">
+                    <a href="#" class="lightbox-trigger" data-src="images/screenshot-dashboard.png">
+                        <img src="images/screenshot-dashboard.png" alt="DueDock Dashboard">
+                    </a>
                     <p>Dashboard</p>
                 </div>
                 <div class="screenshot-frame">
-                    <img src="images/screenshot-scanner.png" alt="Bill Scanner">
+                    <a href="#" class="lightbox-trigger" data-src="images/screenshot-scanner.png">
+                        <img src="images/screenshot-scanner.png" alt="Bill Scanner">
+                    </a>
                     <p>Bill Scanner</p>
                 </div>
                 <div class="screenshot-frame">
-                    <img src="images/screenshot-calendar.png" alt="Calendar View">
+                    <a href="#" class="lightbox-trigger" data-src="images/screenshot-calendar.png">
+                        <img src="images/screenshot-calendar.png" alt="Calendar View">
+                    </a>
                     <p>Calendar</p>
                 </div>
                 <div class="screenshot-frame">
-                    <img src="images/screenshot-coverage.png" alt="Coverage Check">
+                    <a href="#" class="lightbox-trigger" data-src="images/screenshot-coverage.png">
+                        <img src="images/screenshot-coverage.png" alt="Coverage Check">
+                    </a>
                     <p>Coverage Check</p>
                 </div>
             </div>
@@ -346,6 +354,37 @@
         document.querySelectorAll('.feature-card, .privacy-item, .contact-card').forEach(el => {
             el.classList.add('fade-in');
             observer.observe(el);
+        });
+
+        // Lightbox functionality
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = '<span class="lightbox-close">&times;</span><img src="" alt="">';
+        document.body.appendChild(lightbox);
+
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+        // Make screenshot triggers clickable
+        document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                lightboxImg.src = trigger.getAttribute('data-src');
+                lightbox.classList.add('active');
+            });
+        });
+
+        // Close lightbox
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === lightboxClose) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
         });
     </script>
 </body>
