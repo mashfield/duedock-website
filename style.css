@@ -28,6 +28,7 @@
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
 
@@ -216,17 +217,21 @@ img {
     background: var(--gray-200);
 }
 
-.btn-small {
+.nav-links .btn-small,
+.mobile-menu .btn-small {
     padding: 8px 20px;
     font-size: 0.9rem;
-    background: var(--accent);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    color: var(--white) !important;
     border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(220, 105, 43, 0.3);
 }
 
-.btn-small:hover {
-    background: var(--accent-dark);
-    color: var(--white);
+.nav-links .btn-small:hover,
+.mobile-menu .btn-small:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(220, 105, 43, 0.4);
 }
 
 .btn-large {
