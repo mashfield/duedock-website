@@ -775,13 +775,15 @@ img {
 
 .beta-checkbox {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 10px;
     margin-top: 16px;
     cursor: pointer;
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    text-align: left;
 }
 
 .beta-checkbox input[type="checkbox"] {
@@ -789,11 +791,19 @@ img {
     height: 18px;
     accent-color: var(--accent);
     cursor: pointer;
+    margin-top: 2px;
+    flex-shrink: 0;
 }
 
 .beta-checkbox span {
     -webkit-user-select: none;
     user-select: none;
+    display: inline;
+}
+
+.beta-checkbox .brand-text,
+.beta-checkbox .dock-text-white {
+    white-space: nowrap;
 }
 
 .email-note {
@@ -1104,6 +1114,24 @@ img {
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+    }
+
+    .screenshots {
+        text-align: center;
+    }
+
+    .screenshots label.beta-checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .screenshots label.beta-checkbox input[type="checkbox"] {
+        margin-right: 8px;
+    }
+
+    .screenshots label.beta-checkbox span {
+        white-space: nowrap;
     }
 
     .screenshots h2 {
