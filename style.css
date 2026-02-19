@@ -675,6 +675,7 @@ img {
     max-width: 560px;
     margin: 0 auto;
     text-align: center;
+    padding: 0 24px;
 }
 
 .email-capture h2 {
@@ -1054,8 +1055,8 @@ img {
     }
 
     .btn-small {
-        font-size: 0.75rem !important;
-        padding: 6px 12px !important;
+        font-size: 0.8rem !important;
+        padding: 8px 16px !important;
         white-space: nowrap !important;
     }
 
@@ -1166,6 +1167,10 @@ img {
 
     .email-capture h2 {
         font-size: 1.8rem;
+    }
+
+    .email-capture-content {
+        padding: 0 16px;
     }
 
     .about {
