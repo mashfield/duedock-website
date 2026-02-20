@@ -356,6 +356,23 @@
                 </div>
             </div>
 
+            <!-- OPTION E: B's wording + D's icons -->
+            <div id="contact-option-e" class="contact-option" style="display: none;">
+                <h2>Start a conversation</h2>
+                <div class="contact-grid">
+                    <a href="mailto:hello@duedock.app" class="contact-card">
+                        <div class="card-icon">👋</div>
+                        <h4>Quick questions</h4>
+                        <p>Reach out at hello@duedock.app</p>
+                    </a>
+                    <a href="mailto:support@duedock.app" class="contact-card">
+                        <div class="card-icon">💪</div>
+                        <h4>Get help fast</h4>
+                        <p>Support at support@duedock.app</p>
+                    </a>
+                </div>
+            </div>
+
             <!-- DEFAULT: Show Option A if no parameter -->
             <div id="contact-default" class="contact-option">
                 <h2>Have questions? I'd love to hear from you</h2>
@@ -393,6 +410,7 @@
             else if (contactOption === 'b') selectedOption = 'contact-option-b';
             else if (contactOption === 'c') selectedOption = 'contact-option-c';
             else if (contactOption === 'd') selectedOption = 'contact-option-d';
+            else if (contactOption === 'e') selectedOption = 'contact-option-e';
             
             const element = document.getElementById(selectedOption);
             if (element) {
