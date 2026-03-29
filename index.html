@@ -25,7 +25,14 @@
     <link rel="apple-touch-icon" href="images/app-icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="has-announcement">
+
+    <!-- Announcement Bar -->
+    <div id="announcement" class="announcement-bar">
+        <span>🚀 <strong>Just Released:</strong> Version 2.7.6 is now live with high-density forms and sticky headers!</span>
+        <a href="https://testflight.apple.com/join/naasGJBt">Get it on TestFlight →</a>
+        <button class="announcement-close" onclick="closeAnnouncement()" aria-label="Close announcement">&times;</button>
+    </div>
 
     <!-- Navigation -->
     <nav class="nav">
@@ -515,6 +522,13 @@
                 lightbox.classList.remove('active');
             }
         });
+
+        // Close announcement bar
+        function closeAnnouncement() {
+            const bar = document.getElementById('announcement');
+            if (bar) bar.style.display = 'none';
+            document.body.classList.remove('has-announcement');
+        }
     </script>
 </body>
 </html>

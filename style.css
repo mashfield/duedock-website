@@ -56,6 +56,64 @@ img {
     height: auto;
 }
 
+/* ===== Announcement Bar ===== */
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 48px;
+    z-index: 1000;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-bar a {
+    color: var(--white);
+    text-decoration: underline;
+    margin-left: 8px;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.announcement-bar a:hover {
+    opacity: 1;
+}
+
+.announcement-close {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0 8px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.announcement-close:hover {
+    opacity: 1;
+}
+
+.has-announcement .nav {
+    top: 40px;
+}
+
+.has-announcement .hero {
+    padding-top: 200px;
+}
+
 /* ===== Navigation ===== */
 .nav {
     position: fixed;
@@ -431,6 +489,7 @@ img {
     color: var(--dark) !important;
     background: none !important;
     -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
     -webkit-text-fill-color: var(--dark) !important;
 }
 
@@ -438,6 +497,7 @@ img {
     color: var(--white) !important;
     background: none !important;
     -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
     -webkit-text-fill-color: var(--white) !important;
 }
 
@@ -450,8 +510,8 @@ img {
     line-height: 1.4;
     background: linear-gradient(135deg, var(--accent), var(--accent-light));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow: 0 2px 4px rgba(220, 105, 43, 0.1);
     animation: pulse 2s infinite;
 }
