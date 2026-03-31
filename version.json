@@ -1,0 +1,11 @@
+{
+  "latest_version": "2.7.6",
+  "minimum_supported_version": "2.7.5",
+  "force_update": false,
+  "release_notes": [
+    "High-density form overhaul for Bills and Incomes.",
+    "Integrated 'Sticky Header' cards for faster data entry.",
+    "Corrected production branding (removing Beta labels)."
+  ],
+  "app_store_url": "https://apps.apple.com/ca/app/duedock/id6735166299"
+}
